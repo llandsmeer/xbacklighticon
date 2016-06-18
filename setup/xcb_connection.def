@@ -1,0 +1,6 @@
+#ifndef XCB_CONNECTION_DEF
+#define XCB_CONNECTION_DEF
+
+app_init_xcb_connection(app);
+
+#endif
