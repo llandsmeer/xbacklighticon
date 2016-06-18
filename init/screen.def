@@ -1,0 +1,8 @@
+#ifndef APP_INIT_SCREEN_DEF
+#define APP_INIT_SCREEN_DEF
+
+#include "xcb_connection.def"
+
+app_init_screen,
+
+#endif

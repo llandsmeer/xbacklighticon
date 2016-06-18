@@ -1,0 +1,9 @@
+#ifndef APP_INIT_TRAY_ICON_WINDOW_DEF
+#define APP_INIT_TRAY_ICON_WINDOW_DEF
+
+#include "xcb_connection.def"
+#include "screen.def"
+
+app_init_tray_icon_window,
+
+#endif

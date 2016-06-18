@@ -1,2 +1,4 @@
 #include "xcb_connection.def"
 #include "systray_send_message.def"
+#include "screen.def"
+#include "tray_icon_window.def"

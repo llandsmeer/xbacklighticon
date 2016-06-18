@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -e
+
+cat  << EOF > init/$1.c
+#include "app_init.h"
+
+void app_init_$1(struct app * app) {
+}
+EOF
+
+upcase=$(tr a-z A-Z <<< $1)
+
+cat << EOF > init/$1.def
+#ifndef APP_INIT_${upcase}_DEF
+#define APP_INIT_${upcase}_DEF
+
+$1,
+
+#endif
+EOF
+
+echo "void app_init_$1(struct app*);" >> init/app_init.h
+echo "#include "'"'"$1.def"'"' >> init/app_init.def

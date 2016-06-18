@@ -1,5 +1,5 @@
-#ifndef XCB_CONNECTION_DEF
-#define XCB_CONNECTION_DEF
+#ifndef APP_INIT_XCB_CONNECTION_DEF
+#define APP_INIT_XCB_CONNECTION_DEF
 
 app_init_xcb_connection,
 
