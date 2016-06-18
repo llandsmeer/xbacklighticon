@@ -1,0 +1,9 @@
+#ifndef APP_INIT_SYSTEM_TRAY_SELECTION_OWNER_WINDOW_DEF
+#define APP_INIT_SYSTEM_TRAY_SELECTION_OWNER_WINDOW_DEF
+
+#include "xcb_connection.def"
+#include "system_tray_selection_owner_name.def"
+
+app_init_system_tray_selection_owner_window,
+
+#endif

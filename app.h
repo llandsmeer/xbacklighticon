@@ -8,11 +8,14 @@ struct app {
     int has_error;
     char error_message[32];
     struct {
+        xcb_atom_t net_system_tray_sdefault;
         xcb_atom_t net_system_tray_opcode;
         xcb_atom_t xembed;
     } atoms;
     xcb_window_t tray_icon_window;
+    xcb_window_t system_tray_selection_owner_window;
     xcb_screen_t * screen;
+    int default_screen;
 };
 
 void app_init(struct app *);

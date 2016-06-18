@@ -3,6 +3,7 @@
 
 #include "xcb_connection.def"
 #include "tray_icon_window.def"
+#include "system_tray_selection_owner_window.def"
 
 app_init_systray_send_message,
 

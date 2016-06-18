@@ -1,0 +1,6 @@
+#ifndef APP_INIT_SYSTEM_TRAY_SELECTION_OWNER_NAME_DEF
+#define APP_INIT_SYSTEM_TRAY_SELECTION_OWNER_NAME_DEF
+
+app_init_system_tray_selection_owner_name,
+
+#endif

@@ -4,3 +4,5 @@
 #include "tray_icon_window.def"
 #include "tray_icon_window_dock.def"
 #include "tray_icon_window_xembed.def"
+#include "system_tray_selection_owner_window.def"
+#include "system_tray_selection_owner_name.def"
