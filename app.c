@@ -1,9 +1,9 @@
 #include "app.h"
-#include "setup/appsetup.h"
+#include "init/app_init.h"
 
 void app_init(struct app * app) {
     if (!app) return;
-#include "setup/appsetup.def"
+#include "init/app_init.def"
 }
 
 void app_run(struct app * app) {
