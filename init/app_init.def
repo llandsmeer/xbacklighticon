@@ -1,1 +1,2 @@
 #include "xcb_connection.def"
+#include "systray_send_message.def"

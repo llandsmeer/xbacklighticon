@@ -1,0 +1,8 @@
+#ifndef SYSTRAY_SEND_MESSAGE_DEF
+#define SYSTRAY_SEND_MESSAGE_DEF
+
+#include "xcb_connection.def"
+
+app_init_systray_send_message,
+
+#endif

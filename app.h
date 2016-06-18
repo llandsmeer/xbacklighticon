@@ -7,6 +7,9 @@ struct app {
     xcb_connection_t * xcb_connection;
     int has_error;
     char error_message[32];
+    struct {
+        xcb_atom_t net_system_tray_opcode;
+    } atoms;
 };
 
 void app_init(struct app *);
