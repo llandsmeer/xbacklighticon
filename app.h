@@ -9,6 +9,7 @@ struct app {
     char error_message[32];
     struct {
         xcb_atom_t net_system_tray_opcode;
+        xcb_atom_t xembed;
     } atoms;
     xcb_window_t tray_icon_window;
     xcb_screen_t * screen;
@@ -20,5 +21,6 @@ void app_dispose(struct app *);
 void app_init_error(struct app *, const char *);
 void app_systray_send_event(struct app *, uint32_t,
         uint32_t, uint32_t, uint32_t);
+void app_xcb_intern_atom(struct app *, xcb_atom_t *, const char *);
 
 #endif

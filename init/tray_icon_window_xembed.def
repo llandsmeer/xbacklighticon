@@ -1,0 +1,6 @@
+#ifndef APP_INIT_TRAY_ICON_WINDOW_XEMBED_DEF
+#define APP_INIT_TRAY_ICON_WINDOW_XEMBED_DEF
+
+app_init_tray_icon_window_xembed,
+
+#endif

@@ -15,7 +15,7 @@ cat << EOF > init/$1.def
 #ifndef APP_INIT_${upcase}_DEF
 #define APP_INIT_${upcase}_DEF
 
-$1,
+app_init_$1,
 
 #endif
 EOF

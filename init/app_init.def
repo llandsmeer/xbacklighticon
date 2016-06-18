@@ -2,3 +2,5 @@
 #include "systray_send_message.def"
 #include "screen.def"
 #include "tray_icon_window.def"
+#include "tray_icon_window_dock.def"
+#include "tray_icon_window_xembed.def"
