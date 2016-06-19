@@ -12,6 +12,5 @@ void app_init_tray_icon_window(struct app * app) {
             app->screen->root_visual,
             XCB_CW_BACK_PIXEL | XCB_CW_EVENT_MASK,
             values);
-    xcb_map_window(app->xcb_connection, app->tray_icon_window);
     xcb_flush(app->xcb_connection);
 }
