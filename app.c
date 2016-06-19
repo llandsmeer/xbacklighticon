@@ -51,6 +51,9 @@ void app_run(struct app * app) {
             case XCB_MAPPING_NOTIFY:
                 printf("mapping\n");
                 break;
+            case XCB_CLIENT_MESSAGE:
+                printf("client message\n");
+                break;
             default:
                 printf("unknown event %d\n", event->response_type);
         }
