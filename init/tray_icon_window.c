@@ -9,6 +9,6 @@ void app_init_tray_icon_window(struct app * app) {
             app->screen->root_visual,
             0,
             0);
-    /* xcb_map_window(app->xcb_connection, app->tray_icon_window); */
+    xcb_map_window(app->xcb_connection, app->tray_icon_window);
     xcb_flush(app->xcb_connection);
 }

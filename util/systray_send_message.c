@@ -7,7 +7,7 @@ void app_systray_send_event(struct app * app,
     xcb_client_message_event_t event;
     memset(&event, 0, sizeof event);
     event.response_type = XCB_CLIENT_MESSAGE;
-    event.window = app->tray_icon_window;
+    event.window = app->system_tray_selection_owner_window;
     event.type = app->atoms.net_system_tray_opcode;
     event.format = 32;
     event.data.data32[0] = XCB_CURRENT_TIME;
