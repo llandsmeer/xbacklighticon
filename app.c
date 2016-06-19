@@ -32,6 +32,8 @@ void app_run(struct app * app) {
             case XCB_EXPOSE:
                 printf("expose\n");
                 break;
+            case XCB_BUTTON_PRESS:
+                printf("button press\n");
             case XCB_REPARENT_NOTIFY:
                 printf("reparent\n");
                 break;
