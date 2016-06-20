@@ -53,10 +53,11 @@ struct backlight_range app_get_backlight_range_for_output(struct app * app,
             cookie, &error);
     values = xcb_randr_query_output_property_valid_values(reply);
     if (error || !reply) {
-         app_init_error(app, "could not get backlight range");
+        app_init_error(app, "could not get backlight range");
+    } else {
+        range.min = values[0];
+        range.max = values[1];
     }
-    range.min = values[0];
-    range.max = values[1];
     free(reply);
     return range;
 }
