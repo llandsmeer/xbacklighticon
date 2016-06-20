@@ -38,3 +38,25 @@ int32_t app_get_backlight_for_output(struct app * app,
     }
     return backlight;
 }
+
+struct backlight_range app_get_backlight_range_for_output(struct app * app,
+        xcb_randr_output_t output) {
+    struct backlight_range range = {0, 0};
+    int32_t * values;
+    xcb_generic_error_t * error;
+    xcb_randr_query_output_property_cookie_t cookie;
+    xcb_randr_query_output_property_reply_t * reply;
+    cookie = xcb_randr_query_output_property(app->xcb_connection, output,
+            app->supports_new_backlight ? app->atoms.backlight_new
+                                        : app->atoms.backlight_legacy);
+    reply = xcb_randr_query_output_property_reply(app->xcb_connection,
+            cookie, &error);
+    values = xcb_randr_query_output_property_valid_values(reply);
+    if (error || !reply) {
+         app_init_error(app, "could not get backlight range");
+    }
+    range.min = values[0];
+    range.max = values[1];
+    free(reply);
+    return range;
+}

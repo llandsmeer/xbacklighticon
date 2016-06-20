@@ -24,6 +24,11 @@ struct app {
     size_t num_randr_outputs;
 };
 
+struct backlight_range {
+    int32_t min;
+    int32_t max;
+};
+
 void app_init(struct app *);
 void app_run(struct app *);
 void app_dispose(struct app *);
@@ -35,5 +40,8 @@ int32_t app_get_backlight_for_output(struct app *, xcb_randr_output_t);
 void app_set_backlight(struct app *, int32_t);
 void app_set_backlight_for_output(struct app *, xcb_randr_output_t,
         int32_t value);
+struct backlight_range app_get_backlight_range_for_output(struct app * app,
+        xcb_randr_output_t);
+void app_modify_backlight_normalized(struct app *, double);
 
 #endif

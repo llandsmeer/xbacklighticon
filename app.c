@@ -11,6 +11,15 @@ static app_initializer app_initializers[] = {
 #include "init/app_init.def"
 };
 
+void app_handle_button_press(struct app * app,
+        xcb_button_press_event_t * event) {
+    if (event->detail == 4) {
+        app_modify_backlight_normalized(app, +3.0);
+    } else if (event->detail == 5) {
+        app_modify_backlight_normalized(app, -3.0);
+    }
+}
+
 void app_init(struct app * app) {
     size_t i;
     if (!app) {
@@ -33,7 +42,8 @@ void app_run(struct app * app) {
                 printf("expose\n");
                 break;
             case XCB_BUTTON_PRESS:
-                printf("button press\n");
+                app_handle_button_press(app, (xcb_button_press_event_t*)event);
+                break;
             case XCB_REPARENT_NOTIFY:
                 printf("reparent\n");
                 break;
