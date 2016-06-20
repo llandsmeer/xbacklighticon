@@ -11,11 +11,14 @@ struct app {
         xcb_atom_t net_system_tray_sdefault;
         xcb_atom_t net_system_tray_opcode;
         xcb_atom_t xembed;
+        xcb_atom_t backlight_new;
+        xcb_atom_t backlight_legacy;
     } atoms;
     xcb_window_t tray_icon_window;
     xcb_window_t system_tray_selection_owner_window;
     xcb_screen_t * screen;
     int default_screen;
+    int supports_new_backlight;
 };
 
 void app_init(struct app *);

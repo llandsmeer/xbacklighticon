@@ -9,3 +9,5 @@ void app_init_tray_icon_window_dock(struct app*);
 void app_init_tray_icon_window_xembed(struct app*);
 void app_init_system_tray_selection_owner_window(struct app*);
 void app_init_system_tray_selection_owner_name(struct app*);
+void app_init_backlight_new(struct app*);
+void app_init_backlight_legacy(struct app*);

@@ -1,0 +1,8 @@
+#ifndef APP_INIT_BACKLIGHT_NEW_DEF
+#define APP_INIT_BACKLIGHT_NEW_DEF
+
+#include "xcb_connection.def"
+
+app_init_backlight_new,
+
+#endif
