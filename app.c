@@ -62,27 +62,23 @@ void app_run(struct app * app) {
             case XCB_BUTTON_PRESS:
                 app_handle_button_press(app, (xcb_button_press_event_t*)event);
                 break;
-            case XCB_REPARENT_NOTIFY:
-                printf("reparent\n");
-                break;
             case XCB_DESTROY_NOTIFY:
-                printf("destroy\n");
-                return;
+                if (((xcb_destroy_notify_event_t*)event)->window ==
+                        app->tray_icon_window) {
+                    return;
+                }
+                break;
+            case XCB_REPARENT_NOTIFY:
                 break;
             case XCB_CONFIGURE_NOTIFY:
-                printf("configure\n");
                 break;
             case XCB_MAP_NOTIFY:
-                printf("notify\n");
                 break;
             case XCB_UNMAP_NOTIFY:
-                printf("unmap\n");
                 break;
             case XCB_MAPPING_NOTIFY:
-                printf("mapping\n");
                 break;
             case XCB_CLIENT_MESSAGE:
-                printf("client message\n");
                 break;
             default:
                 printf("unknown event %d\n", event->response_type);
