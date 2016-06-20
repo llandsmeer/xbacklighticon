@@ -1,0 +1,8 @@
+#ifndef APP_INIT_GRAPHICS_CONTEXT_DEF
+#define APP_INIT_GRAPHICS_CONTEXT_DEF
+
+#include "tray_icon_window.def"
+
+app_init_graphics_context,
+
+#endif

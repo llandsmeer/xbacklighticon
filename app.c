@@ -5,6 +5,8 @@
 #include "app.h"
 #include "init/app_init.h"
 
+#define ICON_MARGIN 0.1
+
 typedef void (*app_initializer)(struct app * app);
 
 static app_initializer app_initializers[] = {
@@ -18,6 +20,22 @@ void app_handle_button_press(struct app * app,
     } else if (event->detail == 5) {
         app_modify_backlight_normalized(app, -3.0);
     }
+}
+
+void app_handle_expose(struct app * app, xcb_expose_event_t * event) {
+    if (event->window != app->tray_icon_window) {
+        return;
+    }
+    xcb_arc_t circle;
+    circle.x = ICON_MARGIN * event->width + 0.5;
+    circle.y = ICON_MARGIN * event->height + 0.5;
+    circle.width = (1-2*ICON_MARGIN) * event->width + 0.5;
+    circle.height = (1-2*ICON_MARGIN) * event->height + 0.5;
+    circle.angle1 = 0 << 6;
+    circle.angle2 = 360 << 6;
+    xcb_poly_fill_arc(app->xcb_connection, app->tray_icon_window,
+            app->xcb_gc, 1, &circle);
+    xcb_flush(app->xcb_connection);
 }
 
 void app_init(struct app * app) {
@@ -39,7 +57,7 @@ void app_run(struct app * app) {
     while ((event = xcb_wait_for_event(app->xcb_connection))) {
         switch (event->response_type & ~0x80) {
             case XCB_EXPOSE:
-                printf("expose\n");
+                app_handle_expose(app, (xcb_expose_event_t *)event);
                 break;
             case XCB_BUTTON_PRESS:
                 app_handle_button_press(app, (xcb_button_press_event_t*)event);

@@ -22,6 +22,7 @@ struct app {
     int supports_new_backlight;
     xcb_randr_output_t * randr_outputs;
     size_t num_randr_outputs;
+    xcb_gcontext_t xcb_gc;
 };
 
 struct backlight_range {

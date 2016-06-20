@@ -2,7 +2,7 @@
 
 void app_init_tray_icon_window(struct app * app) {
     uint32_t values[] = {
-        0xffffffff,
+        0x0,
         XCB_EVENT_MASK_EXPOSURE | XCB_EVENT_MASK_STRUCTURE_NOTIFY |
             XCB_EVENT_MASK_BUTTON_PRESS};
     app->tray_icon_window = xcb_generate_id(app->xcb_connection);

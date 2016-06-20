@@ -12,3 +12,4 @@ void app_init_system_tray_selection_owner_name(struct app*);
 void app_init_backlight_new(struct app*);
 void app_init_backlight_legacy(struct app*);
 void app_init_randr_output(struct app*);
+void app_init_graphics_context(struct app*);

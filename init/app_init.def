@@ -9,3 +9,4 @@
 #include "backlight_new.def"
 #include "backlight_legacy.def"
 #include "randr_output.def"
+#include "graphics_context.def"
