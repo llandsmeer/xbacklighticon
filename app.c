@@ -15,6 +15,10 @@ static app_initializer app_initializers[] = {
 
 void app_handle_button_press(struct app * app,
         xcb_button_press_event_t * event) {
+    app_load_randr_outputs(app);
+    if (app->has_error) {
+        return;
+    }
     if (event->detail == 4) {
         app_modify_backlight_normalized(app, +3.0);
     } else if (event->detail == 5) {

@@ -1,7 +1,7 @@
 #include <stdlib.h>
-#include "app_init.h"
+#include "../app.h"
 
-void app_init_randr_output(struct app * app) {
+void app_load_randr_outputs(struct app * app) {
     xcb_generic_error_t * error = 0;
     xcb_randr_get_screen_resources_current_cookie_t cookie;
     xcb_randr_get_screen_resources_current_reply_t * reply;

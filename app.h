@@ -44,5 +44,6 @@ void app_set_backlight_for_output(struct app *, xcb_randr_output_t,
 struct backlight_range app_get_backlight_range_for_output(struct app * app,
         xcb_randr_output_t);
 void app_modify_backlight_normalized(struct app *, double);
+void app_load_randr_outputs(struct app * app);
 
 #endif
