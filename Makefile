@@ -1,7 +1,10 @@
 build:
-	cc -lxcb -lxcb-randr *.c */*.c -o backlighticon
+	cc -lxcb -lxcb-randr *.c */*.c -o xbacklighticon
+
+install:
+	install xbacklighticon /usr/bin
 
 clean:
-	rm -f backlighticon
+	rm -f xbacklighticon
 
-.PHONY: build clean
+.PHONY: build install clean
