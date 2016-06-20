@@ -2,6 +2,7 @@
 #define APP_H
 
 #include <xcb/xcb.h>
+#include <xcb/randr.h>
 
 struct app {
     xcb_connection_t * xcb_connection;
@@ -19,6 +20,8 @@ struct app {
     xcb_screen_t * screen;
     int default_screen;
     int supports_new_backlight;
+    xcb_randr_output_t * randr_outputs;
+    size_t num_randr_outputs;
 };
 
 void app_init(struct app *);
@@ -28,5 +31,9 @@ void app_init_error(struct app *, const char *);
 void app_systray_send_event(struct app *, uint32_t,
         uint32_t, uint32_t, uint32_t);
 void app_xcb_intern_atom(struct app *, xcb_atom_t *, const char *);
+int32_t app_get_backlight_for_output(struct app *, xcb_randr_output_t);
+void app_set_backlight(struct app *, int32_t);
+void app_set_backlight_for_output(struct app *, xcb_randr_output_t,
+        int32_t value);
 
 #endif

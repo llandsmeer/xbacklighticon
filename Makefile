@@ -1,5 +1,5 @@
 build:
-	cc -lxcb *.c */*.c -o backlighticon
+	cc -lxcb -lxcb-randr *.c */*.c -o backlighticon
 
 clean:
 	rm -f backlighticon
